@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features
+        xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0"
+        name="my-test-app"
+>
+
+    <feature name="My-Test" version="${pom.version}">
+        <feature>my-test-ui</feature>
+    </feature>
+
+    <feature name="my-test-ui" version="${pom.version}">
+        <feature>http</feature>
+        <feature>http-whiteboard</feature>
+        <bundle>mvn:com.vineeth.test/my-servlet/${pom.version}</bundle>
+    </feature>
+
+</features>
