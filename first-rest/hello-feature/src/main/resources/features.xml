@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features
+        xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0"
+        name="rest-app"
+>
+
+    <feature name="first-rest-app" version="${pom.version}">
+        <feature>rest-hello-service</feature>
+    </feature>
+
+    <feature name="rest-hello-service" version="${pom.version}">
+        <feature>http</feature>
+        <feature>cxf</feature>
+        <bundle>mvn:com.karaf.firstrest/hello-service/${pom.version}</bundle>
+        <bundle>mvn:com.karaf.firstrest/hello-rest/${pom.version}</bundle>
+    </feature>
+
+
+
+</features>
