@@ -8,3 +8,5 @@ To set up the project follow the below steps
   1) feature:repo-add mvn:com.karaf.firstservlet/my-feature/1.0.0-SNAPSHOT/xml
   
   2) feature:install my-test-servlet
+
+3) Hit the URL : http://localhost:8181/first-servlet
