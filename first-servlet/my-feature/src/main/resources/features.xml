@@ -7,13 +7,13 @@
 >
 
     <feature name="My-Test" version="${pom.version}">
-        <feature>my-test-ui</feature>
+        <feature>my-test-servlet</feature>
     </feature>
 
-    <feature name="my-test-ui" version="${pom.version}">
+    <feature name="my-test-servlet" version="${pom.version}">
         <feature>http</feature>
         <feature>http-whiteboard</feature>
-        <bundle>mvn:com.vineeth.test/my-servlet/${pom.version}</bundle>
+        <bundle>mvn:com.karaf.firstservlet/my-servlet/${pom.version}</bundle>
     </feature>
 
 </features>

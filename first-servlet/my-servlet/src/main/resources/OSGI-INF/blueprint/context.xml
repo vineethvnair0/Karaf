@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
-    <bean id="myServlet" class="com.vineeth.test.ui.TestServlet"/>
+    <bean id="myServlet" class="com.karaf.firstservlet.FirstServlet"/>
     <service ref="myServlet" interface="javax.servlet.http.HttpServlet">
         <service-properties>
-            <entry key="alias" value="/my-test" />
+            <entry key="alias" value="/first-servlet" />
         </service-properties>
     </service>
 </blueprint>
