@@ -6,6 +6,7 @@
       2) feature:install http cxf
       
 3) Install the pacakge
+
     1) feature:repo-add mvn:com.karaf.firstrest/hello-feature/1.0.0-SNAPSHOT/xml
     2) feature:install rest-hello-service
     
