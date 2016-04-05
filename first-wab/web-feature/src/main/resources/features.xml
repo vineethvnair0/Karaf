@@ -8,6 +8,6 @@
 
     <feature name="my-first-wab" version="${pom.version}">
         <feature>war</feature>
-        <bundle>mvn:com.karaf.firstwab/first-wab/${pom.version}/war</bundle>
+        <bundle>mvn:com.karaf.firstwab/web-app/${pom.version}/war</bundle>
     </feature>
 </features>
