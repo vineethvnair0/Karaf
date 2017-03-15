@@ -6,10 +6,6 @@
         name="rest-app"
 >
 
-    <feature name="first-rest-app" version="${pom.version}">
-        <feature>rest-hello-service</feature>
-    </feature>
-
     <feature name="rest-hello-service" version="${pom.version}">
         <feature>http</feature>
         <feature>cxf</feature>
