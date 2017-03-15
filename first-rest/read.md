@@ -2,8 +2,8 @@
 
 2) Install cxf and http
     
-      1) feature:repo-add mvn:org.apache.cxf.karaf/apache-cxf/3.0.4/xml/feaures
-      2) feature:install http cxf
+      1) feature:repo-add cxf 3.1.5
+      2) feature:install http cxf-jaxw
       
 3) Install the pacakge
 
