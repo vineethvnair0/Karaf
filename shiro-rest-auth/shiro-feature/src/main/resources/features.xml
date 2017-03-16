@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features
+        xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0"
+        name="shiro-rest-app"
+>
+
+    <repository>mvn:org.apache.karaf.features/spring/4.0.4/xml/features</repository>
+
+    <feature name="shiro-core" version="1.4.0-RC2" resolver="(obr)">
+        <bundle>mvn:org.apache.shiro/shiro-core/1.4.0-RC2</bundle>
+    </feature>
+
+    <feature name="shiro-ehcache" version="1.4.0-RC2">
+        <bundle dependency='true'>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ehcache/2.6.11_1</bundle>
+        <bundle>mvn:org.apache.shiro/shiro-ehcache/1.4.0-RC2</bundle>
+    </feature>
+
+    <feature name="shiro-web" version="1.4.0-RC2">
+        <bundle>mvn:org.apache.shiro/shiro-web/1.4.0-RC2</bundle>
+    </feature>
+
+
+    <feature name="shiro-rest-service" version="${pom.version}">
+        <feature>http</feature>
+        <feature>cxf</feature>
+        <feature>shiro-core</feature>
+        <feature>shiro-ehcache</feature>
+        <feature>shiro-web</feature>
+        <feature version="4.1.7.RELEASE_2">spring</feature>
+        <bundle><![CDATA[wrap:mvn:org.apache.shiro/shiro-jaxrs/1.4.0-RC2$Bundle-SymbolicName=shiro-jaxrs&Bundle-Version=1.4.0]]></bundle>
+        <bundle><![CDATA[wrap:mvn:org.apache.commons/commons-configuration2/2.1$Bundle-SymbolicName=commons-configuration2&Bundle-Version=2.1]]></bundle>
+        <bundle><![CDATA[wrap:mvn:org.apache.commons/commons-collections4/4.1$Bundle-SymbolicName=commons-collections4&Bundle-Version=4.1]]></bundle>
+        <bundle><![CDATA[wrap:mvn:org.apache.commons/commons-lang3/3.5$Bundle-SymbolicName=commons-lang3&Bundle-Version=3.5]]></bundle>        <bundle>mvn:com.karaf.shiro.auth/shiro-service/${pom.version}</bundle>
+        <bundle>mvn:com.karaf.shiro.auth/shiro-rest/${pom.version}</bundle>
+    </feature>
+
+
+
+</features>
