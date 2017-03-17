@@ -11,6 +11,13 @@
 
     <artifactId>shiro-service</artifactId>
     <packaging>bundle</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>1.4.0-RC2</version>
+        </dependency>
+    </dependencies>
 
 
 </project>

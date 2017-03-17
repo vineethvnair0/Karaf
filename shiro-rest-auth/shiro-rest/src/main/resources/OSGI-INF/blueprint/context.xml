@@ -22,7 +22,9 @@
             <ref component-id="shiroRestServiceImpl"/>
         </jaxrs:serviceBeans>
         <jaxrs:providers>
-            <bean class="org.apache.shiro.web.jaxrs.ShiroFeature"/>
+            <bean class="org.apache.shiro.web.jaxrs.ExceptionMapper"/>
+            <bean class="org.apache.shiro.web.jaxrs.SubjectPrincipalRequestFilter"/>
+            <bean class="org.apache.shiro.web.jaxrs.ShiroAnnotationFilterFeature"/>
         </jaxrs:providers>
     </jaxrs:server>
 
