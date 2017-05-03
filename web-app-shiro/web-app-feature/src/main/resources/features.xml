@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features
+        xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0"
+        name="web-app-shiro"
+>
+    <repository>mvn:org.apache.karaf.features/spring/4.0.4/xml/features</repository>
+
+    <feature name="shiro-core" version="1.4.0-RC2" resolver="(obr)">
+        <bundle>mvn:org.apache.shiro/shiro-core/1.4.0-RC2</bundle>
+    </feature>
+
+    <feature name="shiro-web" version="1.4.0-RC2">
+        <bundle>mvn:org.apache.shiro/shiro-web/1.4.0-RC2</bundle>
+    </feature>
+
+    <feature name="web-app-shiro" version="${pom.version}">
+        <feature>war</feature>
+        <bundle><![CDATA[wrap:mvn:org.apache.commons/commons-configuration2/2.1$Bundle-SymbolicName=commons-configuration2&Bundle-Version=2.1]]></bundle>
+        <bundle><![CDATA[wrap:mvn:org.apache.commons/commons-lang3/3.5$Bundle-SymbolicName=commons-lang3&Bundle-Version=3.5]]></bundle>
+        <feature version="4.1.7.RELEASE_2">spring</feature>
+        <bundle><![CDATA[wrap:mvn:commons-beanutils/commons-beanutils/1.9.2$Bundle-SymbolicName=commons-beanutils&Bundle-Version=1.9.2]]></bundle>
+        <bundle><![CDATA[wrap:mvn:commons-collections/commons-collections/3.2.2$Bundle-SymbolicName=commons-collections&Bundle-Version=3.2.2]]></bundle>
+        <feature>shiro-core</feature>
+        <feature>shiro-web</feature>
+        <bundle>mvn:com.karaf.shiro/web-app/${pom.version}</bundle>
+    </feature>
+</features>

@@ -29,10 +29,22 @@
         <feature>shiro-ehcache</feature>
         <feature>shiro-web</feature>
         <feature version="4.1.7.RELEASE_2">spring</feature>
+        <bundle><![CDATA[wrap:mvn:org.apache.syncope.client/syncope-client-lib/2.0.1$Bundle-SymbolicName=syncope-client&Bundle-Version=2.0.1]]></bundle>
+        <bundle><![CDATA[wrap:mvn:org.apache.syncope.common/syncope-common-lib/2.0.1$Bundle-SymbolicName=syncope-common&Bundle-Version=2.0.1]]></bundle>
+        <bundle><![CDATA[wrap:mvn:org.apache.syncope.common/syncope-common-rest-api/2.0.1$Bundle-SymbolicName=syncope-common-rest-api&Bundle-Version=2.0.1]]></bundle>
         <bundle><![CDATA[wrap:mvn:org.apache.shiro/shiro-jaxrs/1.4.0-RC2$Bundle-SymbolicName=shiro-jaxrs&Bundle-Version=1.4.0]]></bundle>
         <bundle><![CDATA[wrap:mvn:org.apache.commons/commons-configuration2/2.1$Bundle-SymbolicName=commons-configuration2&Bundle-Version=2.1]]></bundle>
         <bundle><![CDATA[wrap:mvn:org.apache.commons/commons-collections4/4.1$Bundle-SymbolicName=commons-collections4&Bundle-Version=4.1]]></bundle>
-        <bundle><![CDATA[wrap:mvn:org.apache.commons/commons-lang3/3.5$Bundle-SymbolicName=commons-lang3&Bundle-Version=3.5]]></bundle>        <bundle>mvn:com.karaf.shiro.auth/shiro-service/${pom.version}</bundle>
+        <bundle><![CDATA[wrap:mvn:org.apache.commons/commons-lang3/3.5$Bundle-SymbolicName=commons-lang3&Bundle-Version=3.5]]></bundle>
+        <bundle>mvn:com.karaf.shiro.auth/shiro-service/${pom.version}</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-databind/2.7.2</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-annotations/2.7.2</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-core/2.7.2</bundle>
+        <bundle><![CDATA[wrap:mvn:com.fasterxml.jackson.datatype/jackson-datatype-joda/2.7.2$Bundle-SymbolicName=jackson-datatype-joda&Bundle-Version=2.7.2]]></bundle>
+
+        <bundle>mvn:com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.7.2</bundle>
+        <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.7.2</bundle>
+        <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.7.2</bundle>
         <bundle>mvn:com.karaf.shiro.auth/shiro-rest/${pom.version}</bundle>
     </feature>
 

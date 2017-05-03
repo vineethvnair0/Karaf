@@ -17,32 +17,14 @@
         </cxf:features>
     </cxf:bus>
 
-    <bean id="myRealm" class="com.karaf.rest.auth.auth.MyRealm">
-
-    </bean>
-
-    <bean id="securityManager" class="org.apache.shiro.mgt.DefaultSecurityManager">
-        <property name="realm" ref="myRealm"/>
-    </bean>
-
-
-
-    <jaxrs:server address="/" id="shiroRestService">
+    <jaxrs:server address="/" id="restService">
         <jaxrs:serviceBeans>
-            <ref component-id="shiroRestServiceImpl"/>
+            <ref component-id="restServiceImpl"/>
         </jaxrs:serviceBeans>
-        <jaxrs:providers>
-            <bean class="org.apache.shiro.web.jaxrs.ExceptionMapper"/>
-            <bean class="com.karaf.rest.auth.auth.ShiroAuthenticationFilter" init-method="init_method" >
-                <property name="securityManager" ref="securityManager"/>
-            </bean>
-        </jaxrs:providers>
     </jaxrs:server>
 
-    <reference id="shiroServiceBean" interface="com.karaf.shiro.auth.service.ShiroService" />
 
-    <bean id="shiroRestServiceImpl" class="com.karaf.rest.auth.impl.ShiroRestServiceImpl">
-        <property name="shiroService" ref="shiroServiceBean"/>
+    <bean id="restServiceImpl" class="com.rest.service.impl.RestServiceImpl">
     </bean>
 
  </blueprint>

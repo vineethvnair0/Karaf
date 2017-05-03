@@ -43,7 +43,93 @@
             <artifactId>shiro-web</artifactId>
             <version>1.3.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.syncope.client</groupId>
+            <artifactId>syncope-client-lib</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.syncope.common</groupId>
+            <artifactId>syncope-common-lib</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.7.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.7.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.7.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-joda</artifactId>
+            <version>2.7.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-jaxb-annotations</artifactId>
+            <version>2.7.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>2.7.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-base</artifactId>
+            <version>2.7.2</version>
+        </dependency>
     </dependencies>
 
+    <build>
+    <plugins>
+    <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <executions>
+            <execution>
+                <id>bundle-manifest</id>
+                <phase>process-classes</phase>
+                <goals>
+                    <goal>manifest</goal>
+                </goals>
+            </execution>
+        </executions>
+        <configuration>
+            <instructions >
+                <Import-Package>
+                    org.apache.syncope.common.lib.patch,
+                    org.apache.shiro.mgt,
+                    org.apache.shiro.realm,
+                    org.apache.shiro.authc.credential,
+                    org.apache.shiro.authz,
+                    org.apache.shiro.authc,
+                    org.apache.syncope.client.lib,
+                    org.apache.syncope.common.rest.api.service,
+                    org.apache.syncope.common.lib.to,
+                    org.apache.syncope.common.rest.api.beans,
+                    org.apache.syncope.common.lib.types,
+                    org.apache.shiro,
+                    com.karaf.shiro.auth.service,
+                    org.apache.shiro.web.jaxrs,
+                    *
+                </Import-Package>
+            </instructions>
+        </configuration>
+    </plugin>
+    </plugins>
+    </build>
 
 </project>
